@@ -25,6 +25,9 @@
 /** The view controller this message is displayed in */
 @property (nonatomic, readonly) UIViewController *viewController;
 
+/** The type of the message */
+@property (nonatomic, assign, readonly) TSMessageNotificationType notificationType;
+
 /** The duration of the displayed message. If it is 0.0, it will automatically be calculated */
 @property (nonatomic, assign) CGFloat duration;
 

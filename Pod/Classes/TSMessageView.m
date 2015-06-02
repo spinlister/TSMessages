@@ -35,6 +35,7 @@ static NSMutableDictionary *_notificationDesign;
 /** The view controller this message is displayed in */
 @property (nonatomic, strong) UIViewController *viewController;
 
+@property (nonatomic, assign) TSMessageNotificationType notificationType;
 
 /** Internal properties needed to resize the view on device rotation properly */
 @property (nonatomic, strong) UILabel *titleLabel;
@@ -59,7 +60,6 @@ static NSMutableDictionary *_notificationDesign;
 
 
 @implementation TSMessageView{
-    TSMessageNotificationType notificationType;
 }
 -(void) setContentFont:(UIFont *)contentFont{
     _contentFont = contentFont;
@@ -103,7 +103,7 @@ static NSMutableDictionary *_notificationDesign;
 
 -(void) updateCurrentIcon{
     UIImage *image = nil;
-    switch (notificationType)
+    switch (_notificationType)
     {
         case TSMessageNotificationTypeMessage:
         {
@@ -211,8 +211,8 @@ canBeDismissedByUser:(BOOL)dismissingEnabled
         
         NSDictionary *current;
         NSString *currentString;
-        notificationType = aNotificationType;
-        switch (notificationType)
+        _notificationType = aNotificationType;
+        switch (_notificationType)
         {
             case TSMessageNotificationTypeMessage:
             {
