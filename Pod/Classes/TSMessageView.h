@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HexColor.h"
+#import "TSBlurView.h"
 #import "TSMessage.h"
 
 #define TSMessageViewAlpha 0.95
-
-
-
+#define TSMessageViewMinimumPadding 15.0
 
 @interface TSMessageView : UIView
 
@@ -80,5 +80,6 @@ canBeDismissedByUser:(BOOL)dismissingEnabled;
 /** Use this method to load a custom design file */
 + (void)addNotificationDesignFromFile:(NSString *)file;
 
+- (void)updateIconImage:(UIImage *)image;
 
 @end
