@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HexColor.h"
+#import "HexColors.h"
 #import "TSBlurView.h"
 #import "TSMessage.h"
 
